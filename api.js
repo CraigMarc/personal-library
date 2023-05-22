@@ -83,7 +83,7 @@ const newBook = new bookData({
     newBook.save().then(()=>{
        console.log("Document inserted succussfully :" + newBook);
 return res.json({
-             id: newBook._id,
+             _id: newBook._id,
              title: newBook.title
                   
 }) 
@@ -208,10 +208,10 @@ if (!bookById) {
   res.send('no book exists')
 }
 
-issueData.findByIdAndRemove(bookid)
+bookData.findByIdAndRemove(bookid)
 .then(()=>{
        
-res.send('no book exists')
+res.send('delete successful')
     
   })
  
